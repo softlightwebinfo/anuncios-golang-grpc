@@ -121,7 +121,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="AN-1: Añadir base de datos con sistema de Protos y GRPC" />
-    <option name="LAST_COMMIT_MESSAGE" value="AN-1: Añadir base de datos con sistema de Protos y GRPC" />
+    <MESSAGE value="AN-6: Añadir controlador de guardar imagenes al anuncio" />
+    <option name="LAST_COMMIT_MESSAGE" value="AN-6: Añadir controlador de guardar imagenes al anuncio" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>

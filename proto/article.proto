@@ -41,9 +41,18 @@ message SaveImagesArticleRequest {
   repeated string images = 2;
 }
 
+message GetArticlesUserRequest {
+  int64 user = 1;
+}
+
+message GetArticlesUserResponse {
+  repeated Article articles = 1;
+}
+
 service ArticleService {
   rpc GetArticles(GetArticlesRequest) returns (GetArticlesResponse) {}
   rpc GetArticle(GetArticleRequest) returns (GetArticleResponse) {}
   rpc DeleteArticle(DeleteArticleRequest) returns (SuccessResponse) {}
   rpc SaveImagesArticle(SaveImagesArticleRequest) returns (SuccessResponse) {}
+  rpc GetArticlesUser(GetArticlesUserRequest) returns (GetArticlesUserResponse) {}
 }
