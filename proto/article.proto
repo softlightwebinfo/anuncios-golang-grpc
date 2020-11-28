@@ -2,6 +2,10 @@ syntax = "proto3";
 package proto;
 import "google/protobuf/wrappers.proto";
 
+message SuccessResponse{
+  bool success = 1;
+}
+
 message Article {
   int64 id = 1;
   string title = 2;
@@ -28,7 +32,12 @@ message GetArticleResponse {
   Article response = 1;
 }
 
+message DeleteArticleRequest {
+  int64 id = 1;
+}
+
 service ArticleService {
   rpc GetArticles(GetArticlesRequest) returns (GetArticlesResponse) {}
   rpc GetArticle(GetArticleRequest) returns (GetArticleResponse) {}
+  rpc DeleteArticle(DeleteArticleRequest) returns (SuccessResponse) {}
 }
