@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,11 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f72a8d68-2ca5-4881-af10-6e792da8d8e6" name="Default Changelist" comment="AN-3: Creación del controlador de eliminacion de anuncios">
-      <change afterPath="$PROJECT_DIR$/services/create_notification.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/structs/notification.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/article_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/article_controller.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/article.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/article.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606594938974</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="AN-7: Añadir notificaciones">
+      <created>1606598734072</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1606598734072</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,7 +153,8 @@
     <MESSAGE value="AN-1: Añadir base de datos con sistema de Protos y GRPC" />
     <MESSAGE value="AN-6: Añadir controlador de guardar imagenes al anuncio" />
     <MESSAGE value="AN-5: Añadir controlador de mostrar articulos del usuario" />
-    <option name="LAST_COMMIT_MESSAGE" value="AN-5: Añadir controlador de mostrar articulos del usuario" />
+    <MESSAGE value="AN-7: Añadir notificaciones" />
+    <option name="LAST_COMMIT_MESSAGE" value="AN-7: Añadir notificaciones" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -191,10 +200,10 @@
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="2149" y="179" key="SettingsEditor/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1606559260118" />
-    <state x="2240" y="280" key="Vcs.Push.Dialog.v2" timestamp="1606594944960">
+    <state x="2240" y="280" key="Vcs.Push.Dialog.v2" timestamp="1606598736996">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state x="2240" y="280" key="Vcs.Push.Dialog.v2/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1606594944960" />
+    <state x="2240" y="280" key="Vcs.Push.Dialog.v2/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1606598736996" />
     <state x="2522" y="434" width="323" height="232" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1606512287672">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
@@ -212,9 +221,9 @@
     </state>
     <state x="1680" y="0" width="1920" height="1080" maximized="true" key="dock-window-1/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1606507857824" />
     <state x="1680" y="0" width="1920" height="1080" key="dock-window-1/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1606510584393" />
-    <state x="2305" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1606598361832">
+    <state x="2305" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1606598928750">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state x="2305" y="241" width="670" height="676" key="search.everywhere.popup/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1606598361832" />
+    <state x="2305" y="241" width="670" height="676" key="search.everywhere.popup/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1606598928750" />
   </component>
 </project>

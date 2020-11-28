@@ -173,3 +173,32 @@ func (then ArticleController) SaveImagesArticle(_ context.Context, rq *proto.Sav
 	response.Success = true
 	return response, nil
 }
+
+func (then ArticleController) PublishArticle(_ context.Context, rq *proto.ArticlePublish) (*proto.SuccessResponse, error) {
+	response := &proto.SuccessResponse{Success: false}
+	exec, err := then.DB.Exec(
+		"INSERT INTO articles(title, description, fk_user) VALUES($1, $2, $3)",
+		rq.GetTitle(),
+		rq.GetDescription(),
+		then.User,
+	)
+
+	if err != nil {
+		return response, status.Error(codes.Aborted, "Ups, no se ha podido publicar el anuncio")
+	}
+
+	if affect, err := exec.RowsAffected(); affect == 0 || err != nil {
+		return response, status.Error(codes.NotFound, "Ups, no se ha encontrado el usuario")
+	}
+
+	users := []int64{then.User}
+	go services.SendNotifications(
+		then.DB,
+		users,
+		"Publicación del anuncio",
+		"Se ha publicado correctamente el anuncio",
+	)
+
+	response.Success = true
+	return response, nil
+}
