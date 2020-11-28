@@ -95,6 +95,28 @@ func (then ArticleController) DeleteArticle(_ context.Context, rq *proto.DeleteA
 	)
 
 	if err != nil {
+		return response, status.Error(codes.Aborted, "Ups, no se ha podido eliminar el anuncio")
+	}
+
+	if affect, err := exec.RowsAffected(); affect == 0 || err != nil {
+		return response, status.Error(codes.NotFound, "Ups, no se ha encontrado el anuncio")
+	}
+
+	response.Success = true
+	return response, nil
+}
+
+func (then ArticleController) UpdateArticle(_ context.Context, rq *proto.ArticleUpdate) (*proto.SuccessResponse, error) {
+	response := &proto.SuccessResponse{Success: false}
+	exec, err := then.DB.Exec(
+		"Update articles SET title=$1, description=$2, updated_at=$4 WHERE id=$3",
+		rq.GetTitle(),
+		rq.GetDescription(),
+		rq.GetId(),
+		time.Now(),
+	)
+
+	if err != nil {
 		return response, status.Error(codes.Aborted, "Ups, no se ha podido modificar el anuncio")
 	}
 
