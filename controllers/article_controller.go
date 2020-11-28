@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"cientosdeanuncios.com/backend/proto"
+	"cientosdeanuncios.com/backend/services"
 	"context"
 	"database/sql"
 	"fmt"
@@ -11,7 +12,8 @@ import (
 )
 
 type ArticleController struct {
-	DB *sql.DB
+	DB   *sql.DB
+	User int64
 }
 
 func (then ArticleController) GetArticles(context.Context, *proto.GetArticlesRequest) (*proto.GetArticlesResponse, error) {
@@ -86,7 +88,7 @@ func (then ArticleController) GetArticle(_ context.Context, rq *proto.GetArticle
 	return &response, nil
 }
 
-func (then ArticleController) DeleteArticle(_ context.Context, rq *proto.DeleteArticleRequest) (*proto.SuccessResponse, error) {
+func (then *ArticleController) DeleteArticle(_ context.Context, rq *proto.DeleteArticleRequest) (*proto.SuccessResponse, error) {
 	response := &proto.SuccessResponse{Success: false}
 	exec, err := then.DB.Exec(
 		"Update articles SET deleted_at=$1 where id=$2",
@@ -101,6 +103,15 @@ func (then ArticleController) DeleteArticle(_ context.Context, rq *proto.DeleteA
 	if affect, err := exec.RowsAffected(); affect == 0 || err != nil {
 		return response, status.Error(codes.NotFound, "Ups, no se ha encontrado el anuncio")
 	}
+
+	users := []int64{then.User}
+
+	go services.SendNotifications(
+		then.DB,
+		users,
+		"Eliminacion del anuncio",
+		"Se ha eliminado correctamente el anuncio",
+	)
 
 	response.Success = true
 	return response, nil
@@ -123,6 +134,14 @@ func (then ArticleController) UpdateArticle(_ context.Context, rq *proto.Article
 	if affect, err := exec.RowsAffected(); affect == 0 || err != nil {
 		return response, status.Error(codes.NotFound, "Ups, no se ha encontrado el anuncio")
 	}
+
+	users := []int64{then.User}
+	go services.SendNotifications(
+		then.DB,
+		users,
+		"Modificación del anuncio",
+		"Se ha modificado correctamente el anuncio",
+	)
 
 	response.Success = true
 	return response, nil
