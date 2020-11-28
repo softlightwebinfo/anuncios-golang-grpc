@@ -39,6 +39,31 @@ func (then ArticleController) GetArticles(context.Context, *proto.GetArticlesReq
 	return &response, nil
 }
 
+func (then ArticleController) GetArticlesUser(_ context.Context, req *proto.GetArticlesUserRequest) (*proto.GetArticlesUserResponse, error) {
+	query, err := then.DB.Query("SELECT id, title, description, fk_user, created_at, updated_at, deleted_at from articles where deleted_at is null and fk_user=$1", req.GetUser())
+	if err != nil {
+		return nil, err
+	}
+	response := proto.GetArticlesUserResponse{}
+	for query.Next() {
+		article := proto.Article{}
+		err := query.Scan(
+			&article.Id,
+			&article.Title,
+			&article.Description,
+			&article.FkUser,
+			&article.CreatedAt,
+			&article.UpdatedAt,
+			&article.DeletedAt,
+		)
+		if err != nil {
+			fmt.Println("Error", err.Error())
+		}
+		response.Articles = append(response.Articles, &article)
+	}
+	return &response, nil
+}
+
 func (then ArticleController) GetArticle(_ context.Context, rq *proto.GetArticleRequest) (*proto.GetArticleResponse, error) {
 	response := proto.GetArticleResponse{}
 	article := proto.Article{}
