@@ -20,21 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f72a8d68-2ca5-4881-af10-6e792da8d8e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controllers/article_controller.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/user_controller.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/enums/codes.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/grpc.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proto/article.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proto/service.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/database.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/generateProtos.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/structs/error.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/backend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +56,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="GO_FMT" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -117,8 +104,16 @@
       <option name="presentableId" value="Default" />
       <updated>1606491113667</updated>
       <workItem from="1606491114802" duration="6813000" />
-      <workItem from="1606497950597" duration="22126000" />
+      <workItem from="1606497950597" duration="22255000" />
     </task>
+    <task id="LOCAL-00001" summary="AN-1: Añadir base de datos con sistema de Protos y GRPC">
+      <created>1606562714776</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606562714776</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +130,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="AN-1: Añadir base de datos con sistema de Protos y GRPC" />
+    <option name="LAST_COMMIT_MESSAGE" value="AN-1: Añadir base de datos con sistema de Protos y GRPC" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -180,6 +179,10 @@
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="2149" y="179" key="SettingsEditor/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1606559260118" />
+    <state x="2240" y="280" key="Vcs.Push.Dialog.v2" timestamp="1606562727679">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2240" y="280" key="Vcs.Push.Dialog.v2/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1606562727679" />
     <state x="2522" y="434" width="323" height="232" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1606512287672">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
