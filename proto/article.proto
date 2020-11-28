@@ -16,6 +16,12 @@ message Article {
   google.protobuf.StringValue deletedAt = 7;
 }
 
+message ArticleUpdate {
+  int64 id = 1;
+  string title = 2;
+  string description = 3;
+}
+
 message GetArticlesRequest {
 
 }
@@ -55,4 +61,5 @@ service ArticleService {
   rpc DeleteArticle(DeleteArticleRequest) returns (SuccessResponse) {}
   rpc SaveImagesArticle(SaveImagesArticleRequest) returns (SuccessResponse) {}
   rpc GetArticlesUser(GetArticlesUserRequest) returns (GetArticlesUserResponse) {}
+  rpc UpdateArticle(ArticleUpdate) returns (SuccessResponse) {}
 }
