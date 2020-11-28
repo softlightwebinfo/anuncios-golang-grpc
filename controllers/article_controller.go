@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
+	"time"
 )
 
 type ArticleController struct {
@@ -58,4 +59,24 @@ func (then ArticleController) GetArticle(_ context.Context, rq *proto.GetArticle
 	}
 	response.Response = &article
 	return &response, nil
+}
+
+func (then ArticleController) DeleteArticle(_ context.Context, rq *proto.DeleteArticleRequest) (*proto.SuccessResponse, error) {
+	response := &proto.SuccessResponse{Success: false}
+	exec, err := then.DB.Exec(
+		"Update articles SET deleted_at=$1 where id=$2",
+		time.Now(),
+		rq.GetId(),
+	)
+
+	if err != nil {
+		return response, status.Error(codes.Aborted, "Ups, no se ha podido modificar el anuncio")
+	}
+
+	if affect, err := exec.RowsAffected(); affect == 0 || err != nil {
+		return response, status.Error(codes.NotFound, "Ups, no se ha encontrado el anuncio")
+	}
+
+	response.Success = true
+	return response, nil
 }
