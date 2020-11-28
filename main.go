@@ -22,7 +22,8 @@ func main() {
 		).
 		DB().
 		GRPC(os.Getenv("GRPC_ADDR"), func(server *grpc.Server, db *sql.DB) {
+			var user int64 = 1
 			proto.RegisterUserServiceServer(server, controllers.UserController{DB: db})
-			proto.RegisterArticleServiceServer(server, controllers.ArticleController{DB: db})
+			proto.RegisterArticleServiceServer(server, &controllers.ArticleController{DB: db, User: user})
 		})
 }
