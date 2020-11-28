@@ -80,3 +80,30 @@ func (then ArticleController) DeleteArticle(_ context.Context, rq *proto.DeleteA
 	response.Success = true
 	return response, nil
 }
+
+func (then ArticleController) SaveImagesArticle(_ context.Context, rq *proto.SaveImagesArticleRequest) (*proto.SuccessResponse, error) {
+	response := &proto.SuccessResponse{Success: false}
+	sqlStr := "INSERT INTO articles_images(fk_article, image) VALUES "
+	var vals []interface{}
+	count := 0
+
+	for _, row := range rq.GetImages() {
+		sqlStr += fmt.Sprintf("($%d, $%d),", count+1, count+2)
+		vals = append(vals, rq.GetArticleId(), row)
+		count += 2
+	}
+
+	stmt, _ := then.DB.Prepare(sqlStr[0 : len(sqlStr)-1])
+	res, errStatement := stmt.Exec(vals...)
+
+	if errStatement != nil {
+		return response, status.Error(codes.NotFound, "Ups, no se ha encontrado el anuncio")
+	}
+
+	if affect, err := res.RowsAffected(); affect == 0 || err != nil {
+		return response, status.Error(codes.NotFound, "Ups, no se ha encontrado el anuncio")
+	}
+
+	response.Success = true
+	return response, nil
+}

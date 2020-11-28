@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f72a8d68-2ca5-4881-af10-6e792da8d8e6" name="Default Changelist" comment="">
+    <list default="true" id="f72a8d68-2ca5-4881-af10-6e792da8d8e6" name="Default Changelist" comment="AN-3: Creación del controlador de eliminacion de anuncios">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/article_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/article_controller.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proto/article.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/article.proto" afterDir="false" />
@@ -82,21 +82,6 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -107,6 +92,7 @@
       <updated>1606491113667</updated>
       <workItem from="1606491114802" duration="6813000" />
       <workItem from="1606497950597" duration="22255000" />
+      <workItem from="1606589542306" duration="1622000" />
     </task>
     <task id="LOCAL-00001" summary="AN-1: Añadir base de datos con sistema de Protos y GRPC">
       <created>1606562714776</created>
@@ -202,9 +188,9 @@
     </state>
     <state x="1680" y="0" width="1920" height="1080" maximized="true" key="dock-window-1/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1606507857824" />
     <state x="1680" y="0" width="1920" height="1080" key="dock-window-1/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1606510584393" />
-    <state x="2305" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1606564261014">
+    <state x="2305" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1606593080967">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state x="2305" y="241" width="670" height="676" key="search.everywhere.popup/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1606564261014" />
+    <state x="2305" y="241" width="670" height="676" key="search.everywhere.popup/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1606593080967" />
   </component>
 </project>
