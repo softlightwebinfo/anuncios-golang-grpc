@@ -26,7 +26,23 @@ message AuthRegisterRequest {
   string password = 3;
 }
 
+message AuthRecoveryAccountRequest {
+  string email = 1;
+}
+
+message AuthRecoveryAccountResponse {
+  bool success = 1;
+}
+
+message AuthRecoveryAccountChangeRequest {
+  string token = 1;
+  string email = 2;
+  string password = 3;
+}
+
 service AuthService {
   rpc Auth(AuthRequest) returns (AuthResponse) {}
   rpc Register(AuthRegisterRequest) returns (AuthResponse) {}
+  rpc SendRecoveryAccount(AuthRecoveryAccountRequest) returns (AuthRecoveryAccountResponse) {}
+  rpc RecoveryAccount(AuthRecoveryAccountChangeRequest) returns (AuthRecoveryAccountResponse) {}
 }
