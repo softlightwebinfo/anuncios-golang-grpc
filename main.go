@@ -25,5 +25,6 @@ func main() {
 			var user int64 = 1
 			proto.RegisterUserServiceServer(server, controllers.UserController{DB: db})
 			proto.RegisterArticleServiceServer(server, &controllers.ArticleController{DB: db, User: user})
+			proto.RegisterAuthServiceServer(server, &controllers.AuthController{DB: db, User: user})
 		})
 }
