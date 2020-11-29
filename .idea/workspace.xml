@@ -23,10 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f72a8d68-2ca5-4881-af10-6e792da8d8e6" name="Default Changelist" comment="AN-3: Creación del controlador de eliminacion de anuncios">
-      <change afterPath="$PROJECT_DIR$/controllers/contact_controller.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proto/contact.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/contact_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/contact_controller.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,9 +220,9 @@
     </state>
     <state x="1680" y="0" width="1920" height="1080" maximized="true" key="dock-window-1/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1606507857824" />
     <state x="1680" y="0" width="1920" height="1080" key="dock-window-1/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1606510584393" />
-    <state x="2305" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1606664075659">
+    <state x="2305" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1606664671946">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state x="2305" y="241" width="670" height="676" key="search.everywhere.popup/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1606664075659" />
+    <state x="2305" y="241" width="670" height="676" key="search.everywhere.popup/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1606664671946" />
   </component>
 </project>

@@ -2,8 +2,10 @@ package controllers
 
 import (
 	"cientosdeanuncios.com/backend/proto"
+	"cientosdeanuncios.com/backend/services"
 	"context"
 	"database/sql"
+	"fmt"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )
@@ -44,6 +46,15 @@ func (then ContactController) CreateContact(_ context.Context, rq *proto.CreateC
 	if err != nil {
 		return &response, status.Error(codes.NotFound, "No se ha podido enviar el email")
 	}
+
+	users := []int64{1}
+
+	go services.SendNotifications(
+		then.DB,
+		users,
+		"Sistema de contacto",
+		fmt.Sprintf("%s ha enviado un email con el siguiente mensaje:\n %s", rq.GetName(), rq.GetMessage()),
+	)
 
 	response.Success = true
 
