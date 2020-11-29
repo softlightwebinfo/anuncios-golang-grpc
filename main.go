@@ -26,5 +26,6 @@ func main() {
 			proto.RegisterUserServiceServer(server, controllers.UserController{DB: db})
 			proto.RegisterArticleServiceServer(server, &controllers.ArticleController{DB: db, User: user})
 			proto.RegisterAuthServiceServer(server, &controllers.AuthController{DB: db, User: user})
+			proto.RegisterContactServiceServer(server, &controllers.ContactController{DB: db, User: user})
 		})
 }
