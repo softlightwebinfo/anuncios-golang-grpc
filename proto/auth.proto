@@ -1,0 +1,32 @@
+syntax = "proto3";
+package proto;
+import "google/protobuf/wrappers.proto";
+
+message AuthRequest {
+  string userName = 1;
+  string password = 2;
+}
+
+message AuthUser {
+  int64 id = 1;
+  string name = 2;
+  string email = 3;
+  string createdAt = 4;
+  string role = 5;
+}
+
+message AuthResponse {
+  string token = 1;
+  AuthUser user = 2;
+}
+
+message AuthRegisterRequest {
+  string name = 1;
+  string email = 2;
+  string password = 3;
+}
+
+service AuthService {
+  rpc Auth(AuthRequest) returns (AuthResponse) {}
+  rpc Register(AuthRegisterRequest) returns (AuthResponse) {}
+}
