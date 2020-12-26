@@ -23,8 +23,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f72a8d68-2ca5-4881-af10-6e792da8d8e6" name="Default Changelist" comment="AN-3: Creación del controlador de eliminacion de anuncios">
+      <change afterPath="$PROJECT_DIR$/envoy/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/envoy/envoy.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/envoy/pem/crt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/envoy/pem/key" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/execute.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/contact_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/contact_controller.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/auth_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/auth_controller.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/generateProtos.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/generateProtos.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,16 +79,18 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="database.main" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/models" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/proto" />
       <recent name="$PROJECT_DIR$/controllers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/envoy" />
+      <recent name="$PROJECT_DIR$/models" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunManager">
@@ -96,6 +105,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.Dockerfile" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -108,6 +130,8 @@
       <workItem from="1606491114802" duration="6813000" />
       <workItem from="1606497950597" duration="22255000" />
       <workItem from="1606589542306" duration="1622000" />
+      <workItem from="1606676609420" duration="1325000" />
+      <workItem from="1609007526929" duration="10612000" />
     </task>
     <task id="LOCAL-00001" summary="AN-1: Añadir base de datos con sistema de Protos y GRPC">
       <created>1606562714776</created>
@@ -171,26 +195,27 @@
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="2480" y="219" key="#com.intellij.execution.impl.EditConfigurationsDialog/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1606510923381" />
-    <state x="573" y="334" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606500129648">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="2335" y="344" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1609019973267">
+      <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="573" y="334" key="#com.intellij.fileTypes.FileTypeChooser/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1606500129648" />
-    <state width="1294" height="305" key="GridCell.Tab.0.bottom" timestamp="1606559305714">
+    <state x="2335" y="344" key="#com.intellij.fileTypes.FileTypeChooser/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1609019973267" />
+    <state width="1294" height="305" key="GridCell.Tab.0.bottom" timestamp="1609017848080">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state width="1294" height="305" key="GridCell.Tab.0.bottom/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1606559305714" />
-    <state width="1294" height="305" key="GridCell.Tab.0.center" timestamp="1606559305711">
+    <state width="1294" height="305" key="GridCell.Tab.0.bottom/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1609017848080" />
+    <state width="1294" height="305" key="GridCell.Tab.0.center" timestamp="1609017848076">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state width="1294" height="305" key="GridCell.Tab.0.center/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1606559305711" />
-    <state width="1294" height="305" key="GridCell.Tab.0.left" timestamp="1606559305710">
+    <state width="1294" height="305" key="GridCell.Tab.0.center/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1609017848076" />
+    <state width="1294" height="305" key="GridCell.Tab.0.left" timestamp="1609017848074">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state width="1294" height="305" key="GridCell.Tab.0.left/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1606559305710" />
-    <state width="1294" height="305" key="GridCell.Tab.0.right" timestamp="1606559305712">
+    <state width="1294" height="305" key="GridCell.Tab.0.left/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1609017848074" />
+    <state width="1294" height="305" key="GridCell.Tab.0.right" timestamp="1609017848078">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state width="1294" height="305" key="GridCell.Tab.0.right/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1606559305712" />
+    <state width="1294" height="305" key="GridCell.Tab.0.right/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1609017848078" />
     <state x="659" y="455" key="NewPhpFileDialog" timestamp="1606500099188">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -220,9 +245,9 @@
     </state>
     <state x="1680" y="0" width="1920" height="1080" maximized="true" key="dock-window-1/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1606507857824" />
     <state x="1680" y="0" width="1920" height="1080" key="dock-window-1/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1606510584393" />
-    <state x="2305" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1606664671946">
+    <state x="2305" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1609009202563">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state x="2305" y="241" width="670" height="676" key="search.everywhere.popup/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1606664671946" />
+    <state x="2305" y="241" width="670" height="676" key="search.everywhere.popup/536.-1080.1920.1080/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1609009202563" />
   </component>
 </project>

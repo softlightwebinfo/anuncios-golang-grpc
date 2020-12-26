@@ -18,3 +18,24 @@ services:
     # I used the name postgres-data but you can changed it to something else.
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
+  envoy:
+    build:
+      context: envoy
+    ports:
+      - "8080:8080"
+      - "9901:9901"
+    depends_on:
+      - server
+  server:
+    build:
+      context: .
+  web:
+    image: httpd:2.4
+    volumes:
+      - ${PWD}/web/web-client:/usr/local/apache2/htdocs/
+    ports:
+      - "8060:80"
+    depends_on:
+      - envoy
+networks:
+  backend:

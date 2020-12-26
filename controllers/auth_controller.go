@@ -19,6 +19,7 @@ type AuthController struct {
 }
 
 func (then AuthController) Auth(_ context.Context, rq *proto.AuthRequest) (*proto.AuthResponse, error) {
+	println("HOLA")
 	if len(rq.GetUserName()) == 0 {
 		return nil, status.Error(codes.NotFound, "El campo usuario esta vacio")
 	}
